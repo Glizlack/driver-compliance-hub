@@ -91,7 +91,7 @@ const Index = () => {
               Coverage
             </span>
             <p className="font-display text-2xl text-foreground/90 sm:text-3xl">
-              Lower 48 United States · FMCSA Compliant
+              United States · FMCSA Compliant
             </p>
           </div>
         </section>
