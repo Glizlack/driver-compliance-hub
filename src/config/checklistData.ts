@@ -1,8 +1,15 @@
 // =============================================================
 // Centralized Checklist Configuration
-// Update titles, descriptions, and link URLs in this single file.
-// All cards on the page render from this object.
+// Update titles, descriptions, link URLs, and drawer content here.
 // =============================================================
+
+export type ChecklistDetails = {
+  regulatoryReference?: string;
+  summary?: string;
+  keyRequirements?: string[];
+  resourceLabel?: string;
+  resourceUrl?: string;
+};
 
 export type ChecklistItem = {
   id: string;
@@ -11,6 +18,7 @@ export type ChecklistItem = {
   description: string;
   cta: string;
   href: string;
+  details?: ChecklistDetails;
 };
 
 export const CHECKLIST_ITEMS: ChecklistItem[] = [
@@ -19,10 +27,26 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     number: "01",
     title: "Driver's Employment Application",
     description:
-      "Full 10-year employment history and 3-year residency disclosure, signed and dated per 49 CFR §391.21.",
+      "A signed foundation for the DQF. Requires 10 years of CMV history and 3 years of general employment history.",
     cta: "Open Application",
     // TODO: replace with your hosted application form
     href: "#",
+    details: {
+      regulatoryReference: "49 CFR §391.21",
+      summary:
+        "A signed foundation for the Driver Qualification File (DQF). Requires 10 years of commercial motor vehicle history and 3 years of general employment history.",
+      keyRequirements: [
+        "Full 10-year employment history for any work involving commercial motor vehicles (CMVs).",
+        "Full 3-year history for all other employment.",
+        "List of all vehicle accidents and traffic violations for the past 3 years.",
+        "Full address history for the past 3 years.",
+        "Detailed explanation of any gaps in employment exceeding 30 days.",
+        "Specific statement on whether the driver has ever been denied or lost a license.",
+      ],
+      resourceLabel: "Official FMCSA Safety Planner",
+      resourceUrl:
+        "https://csa.fmcsa.dot.gov/SafetyPlanner/MyFiles/Sections.aspx?ch=23&sec=66",
+    },
   },
   {
     id: "initial-mvr",
@@ -74,5 +98,5 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
 export const SITE = {
   metaTitle: "Federal Driver Qualification Checklist | 2026 DOT Compliance Guide",
   metaDescription:
-    "The 2026 6-point DOT Driver Qualification File checklist for commercial drivers and fleets across the lower 48 — MVR, Clearinghouse, Medical Card, Safety History and more.",
+    "The 2026 6-point DOT Driver Qualification File checklist for commercial drivers and fleets across the United States — MVR, Clearinghouse, Medical Card, Safety History and more.",
 };
