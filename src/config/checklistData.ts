@@ -68,11 +68,18 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
   {
     id: "medical-certificate",
     number: "04",
-    title: "Medical Examiner's Certificate",
+    title: "Medical Examiner's Certificate (MEC)",
     description:
-      "Current MEC issued by an examiner listed on the FMCSA National Registry — verify National Registry status.",
+      "Mandatory verification of physical fitness by an FMCSA-certified professional. CDL data is now transmitted electronically as of June 2025.",
     cta: "Learn More",
-    href: "/verify-examiner",
+    href: "/checklist/medical-certificate",
+    details: {
+      regulatoryReference: "49 CFR §391.43",
+      summary:
+        "Mandatory verification of physical fitness by an FMCSA-certified professional. CDL data is now transmitted electronically as of June 2025.",
+      resourceLabel: "Search the National Registry",
+      resourceUrl: "https://nationalregistry.fmcsa.dot.gov/search/medical-examiners",
+    },
   },
   {
     id: "safety-performance",
