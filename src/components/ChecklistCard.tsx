@@ -11,6 +11,7 @@ import {
 
 export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: number }) => {
   const isExternal = item.href.startsWith("http");
+  const isDownload = /\.(docx?|pdf)$/i.test(item.href);
   const hasDetails = !!item.details;
 
   return (
@@ -40,6 +41,7 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
           href={item.href}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
+          download={isDownload ? "" : undefined}
           className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
         >
           {item.cta}
