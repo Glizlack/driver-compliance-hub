@@ -72,7 +72,7 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     description:
       "Current MEC issued by an examiner listed on the FMCSA National Registry — verify National Registry status.",
     cta: "Learn More",
-    href: "https://nationalregistry.fmcsa.dot.gov",
+    href: "/verify-examiner",
   },
   {
     id: "safety-performance",
