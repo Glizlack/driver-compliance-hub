@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import VerifyExaminer from "./pages/VerifyExaminer.tsx";
 import MedicalCertificate from "./pages/MedicalCertificate.tsx";
 import EmploymentApplication from "./pages/EmploymentApplication.tsx";
+import InitialMVR from "./pages/InitialMVR.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/verify-examiner" element={<VerifyExaminer />} />
           <Route path="/checklist/medical-certificate" element={<MedicalCertificate />} />
           <Route path="/checklist/employment-application" element={<EmploymentApplication />} />
+          <Route path="/checklist/initial-mvr" element={<InitialMVR />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
