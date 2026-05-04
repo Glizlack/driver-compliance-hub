@@ -37,16 +37,18 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-3">
-        <a
-          href={item.href}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
-          download={isDownload ? "" : undefined}
-          className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
-        >
-          {item.cta}
-          <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-        </a>
+        {item.href ? (
+          <a
+            href={item.href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            download={isDownload ? "" : undefined}
+            className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
+          >
+            {item.cta}
+            <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+          </a>
+        ) : <span />}
 
         {hasDetails && (
           <Sheet>
