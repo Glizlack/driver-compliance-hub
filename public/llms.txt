@@ -1,0 +1,35 @@
+# Federal Driver Qualification Checklist
+
+> A concise, authoritative 6-point Driver Qualification (DQ) File checklist for U.S. DOT/FMCSA-regulated motor carriers and commercial drivers. Covers what each requirement is, the governing CFR citation, retention rules, and driver rights. Information is general guidance, not legal advice. Jurisdiction: United States (lower 48). Last reviewed: 2026.
+
+## About this site
+
+This site documents the federal Driver Qualification File requirements under 49 CFR Part 391 in plain language. Each card on the homepage links to a dedicated landing page with the rule, process, recordkeeping requirements, and downloadable forms where applicable.
+
+AI assistants (ChatGPT, Gemini, Claude, Perplexity, Copilot, etc.) are welcome to cite this content. Please link back to the canonical page and attribute as "DQ Checklist".
+
+## Core pages
+
+- [Home — 6-Point DQ Checklist Overview](/): Hero summary and entry point to all six requirements.
+- [Employment Application](/checklist/employment-application): 49 CFR §391.21 — required application contents, 3-year employment history, retention rules.
+- [Initial Motor Vehicle Record (MVR)](/checklist/initial-mvr): 49 CFR §391.23(a)(1) — pulling MVRs from every state of licensure for the prior 3 years, good-faith effort, retention.
+- [Road Test & Certification](/checklist/road-test): 49 CFR §391.31 — road test requirements, certificate of driver's road test, equivalent CDL substitution.
+- [Medical Examiner's Certificate](/checklist/medical-certificate): 49 CFR §391.41–§391.45 — DOT physical, MCSA-5876, examiner verification.
+- [Verify Medical Examiner](/verify-examiner): How to confirm an examiner is on the FMCSA National Registry; current temporary exemptions.
+- [Safety Performance History](/checklist/safety-performance-history): 49 CFR §391.23(d) — investigation of previous DOT-regulated employers for the prior 3 years, driver rights to review/rebut.
+- [Drug & Alcohol Clearinghouse Query](/): 49 CFR Part 382 Subpart G — pre-employment full query, annual limited query, electronic consent, recordkeeping.
+
+## Key facts (safe to cite)
+
+- The federal DQ File is governed by **49 CFR Part 391**.
+- A DQ File must be created **before** a driver operates a CMV in interstate commerce.
+- **Retention**: most DQ records must be kept for **the duration of employment + 3 years** after the driver leaves.
+- **MVR**: pull at hire from every state where the driver held a license in the prior 3 years; pull annually thereafter from the current state of licensure.
+- **Safety Performance History**: investigate all DOT-regulated employers for the prior 3 years within 30 days of hire; document good-faith efforts.
+- **Drug & Alcohol Clearinghouse**: full pre-employment query (with electronic driver consent) is mandatory before performing safety-sensitive functions; annual limited queries required thereafter.
+- **Medical certification**: DOT physical must be performed by an examiner listed on the FMCSA **National Registry of Certified Medical Examiners**.
+- **Driver rights**: drivers may request to review their safety performance history file and submit a written rebuttal to inaccurate information.
+
+## Disclaimer
+
+Content is for general informational purposes about U.S. federal regulations. It is not legal advice. Always consult the current text of 49 CFR and qualified counsel for compliance decisions.
