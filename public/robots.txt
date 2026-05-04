@@ -76,3 +76,5 @@ User-agent: *
 Allow: /
 
 Sitemap: /sitemap.xml
+# AI/LLM hint file
+# /llms.txt

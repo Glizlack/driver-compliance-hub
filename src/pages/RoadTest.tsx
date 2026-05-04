@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Check, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, articleLd, breadcrumbLd } from "@/lib/seo";
 
 const OPTIONS = [
   {
@@ -32,31 +32,25 @@ const TIPS = [
   },
 ];
 
-const RoadTest = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = "Road Test & Certification 2026 | National DOT Compliance";
-    const meta =
-      document.querySelector('meta[name="description"]') ??
-      (() => {
-        const m = document.createElement("meta");
-        m.setAttribute("name", "description");
-        document.head.appendChild(m);
-        return m;
-      })();
-    const prevDesc = meta.getAttribute("content");
-    meta.setAttribute(
-      "content",
-      "Requirements under 49 CFR § 391.31 for operating commercial motor vehicles — road test certificate, CDL substitution, and DQF retention.",
-    );
-    return () => {
-      document.title = prevTitle;
-      if (prevDesc) meta.setAttribute("content", prevDesc);
-    };
-  }, []);
+const PATH = "/checklist/road-test";
+const TITLE = "Road Test & Certification — 49 CFR §391.31 | DQ Checklist";
+const DESC = "Requirements under 49 CFR §391.31 for operating commercial motor vehicles — road test certificate, CDL substitution rules, and DQF retention.";
 
+const RoadTest = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={TITLE}
+        description={DESC}
+        path={PATH}
+        jsonLd={[
+          articleLd({ title: TITLE, description: DESC, path: PATH }),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Road Test & Certification", path: PATH },
+          ]),
+        ]}
+      />
       <div className="mx-auto max-w-3xl px-6 py-10 sm:py-16">
         <Link
           to="/#checklist"

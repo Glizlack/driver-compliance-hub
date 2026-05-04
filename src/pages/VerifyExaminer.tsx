@@ -1,9 +1,26 @@
 import { ArrowLeft, ArrowUpRight, Info, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, articleLd, breadcrumbLd } from "@/lib/seo";
+
+const PATH = "/verify-examiner";
+const TITLE = "Verify Your DOT Medical Examiner | FMCSA National Registry";
+const DESC = "How to verify your DOT medical examiner is on the FMCSA National Registry, plus the current temporary exemption allowing paper MCSA-5876 certificates.";
 
 const VerifyExaminer = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={TITLE}
+        description={DESC}
+        path={PATH}
+        jsonLd={[
+          articleLd({ title: TITLE, description: DESC, path: PATH }),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Verify Examiner", path: PATH },
+          ]),
+        ]}
+      />
       <div className="mx-auto max-w-3xl px-6 py-10 sm:py-16">
         <Link
           to="/#checklist"

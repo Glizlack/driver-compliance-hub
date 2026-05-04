@@ -4,6 +4,7 @@ import { CHECKLIST_ITEMS } from "@/config/checklistData";
 import { TRANSLATIONS, type Lang } from "@/config/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ChecklistCard } from "@/components/ChecklistCard";
+import { SEO, breadcrumbLd } from "@/lib/seo";
 
 const Index = () => {
   const [lang, setLang] = useState<Lang>("en");
@@ -11,6 +12,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Federal Driver Qualification Checklist | 2026 DOT Compliance Guide"
+        description="The 2026 6-point DOT Driver Qualification File checklist for commercial drivers and fleets across the lower 48 — MVR, Clearinghouse, Medical Card, Safety History and more."
+        path="/"
+        jsonLd={breadcrumbLd([{ name: "Home", path: "/" }])}
+      />
       {/* HERO */}
       <header className="relative isolate min-h-[100svh] w-full overflow-hidden">
         <img

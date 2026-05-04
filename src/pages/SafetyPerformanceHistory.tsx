@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { ArrowLeft, Check, FileWarning, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, articleLd, breadcrumbLd } from "@/lib/seo";
 
 const PARTS = [
   {
@@ -46,31 +46,25 @@ const RIGHTS = [
   "Correction / Rebuttal: Drivers may request corrections or submit a written rebuttal to the record.",
 ];
 
-const SafetyPerformanceHistory = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = "Safety Performance History 2026 | National DOT Compliance";
-    const meta =
-      document.querySelector('meta[name="description"]') ??
-      (() => {
-        const m = document.createElement("meta");
-        m.setAttribute("name", "description");
-        document.head.appendChild(m);
-        return m;
-      })();
-    const prevDesc = meta.getAttribute("content");
-    meta.setAttribute(
-      "content",
-      "Investigation requirements for DOT-regulated employers per 49 CFR §391.23 — process, key requirements, retention, and driver rights.",
-    );
-    return () => {
-      document.title = prevTitle;
-      if (prevDesc) meta.setAttribute("content", prevDesc);
-    };
-  }, []);
+const PATH = "/checklist/safety-performance-history";
+const TITLE = "Safety Performance History — 49 CFR §391.23 | DQ Checklist";
+const DESC = "Investigation requirements for DOT-regulated employers per 49 CFR §391.23 — process, key requirements, retention, and driver rights.";
 
+const SafetyPerformanceHistory = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={TITLE}
+        description={DESC}
+        path={PATH}
+        jsonLd={[
+          articleLd({ title: TITLE, description: DESC, path: PATH }),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Safety Performance History", path: PATH },
+          ]),
+        ]}
+      />
       <div className="mx-auto max-w-3xl px-6 py-10 sm:py-16">
         <Link
           to="/#checklist"
