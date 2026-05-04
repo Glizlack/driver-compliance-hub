@@ -29,22 +29,7 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     description:
       "A signed foundation for the DQF. Requires 10 years of CMV history and 3 years of general employment history.",
     cta: "Learn More",
-    href: "",
-    details: {
-      regulatoryReference: "49 CFR §391.21",
-      summary:
-        "A signed foundation for the Driver Qualification File (DQF). Requires 10 years of commercial motor vehicle history and 3 years of general employment history.",
-      keyRequirements: [
-        "Full 10-year employment history for any work involving commercial motor vehicles (CMVs).",
-        "Full 3-year history for all other employment.",
-        "List of all vehicle accidents and traffic violations for the past 3 years.",
-        "Full address history for the past 3 years.",
-        "Detailed explanation of any gaps in employment exceeding 30 days.",
-        "Specific statement on whether the driver has ever been denied or lost a license.",
-      ],
-      resourceLabel: "Download Application",
-      resourceUrl: "/DOT_Employment_Application.docx",
-    },
+    href: "/checklist/employment-application",
   },
   {
     id: "initial-mvr",
