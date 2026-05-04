@@ -46,8 +46,8 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     title: "Road Test Certificate",
     description:
       "Documented road test and certificate on file. A valid CDL copy is acceptable in lieu of a road test.",
-    cta: "Download Form",
-    href: "/Driver_Road_Test_Certificate.pdf",
+    cta: "Learn More",
+    href: "/checklist/road-test",
   },
   {
     id: "medical-certificate",
