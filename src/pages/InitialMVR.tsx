@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { ArrowLeft, Check, ClipboardList } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, articleLd, breadcrumbLd } from "@/lib/seo";
 
 const REQUIREMENTS = [
   {
@@ -31,31 +31,25 @@ const CHECKLIST = [
   "The driver meets the carrier's internal safety standards regarding traffic violations and accidents.",
 ];
 
-const InitialMVR = () => {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = "Initial MVR Compliance 2026 | National DOT Compliance";
-    const meta =
-      document.querySelector('meta[name="description"]') ??
-      (() => {
-        const m = document.createElement("meta");
-        m.setAttribute("name", "description");
-        document.head.appendChild(m);
-        return m;
-      })();
-    const prevDesc = meta.getAttribute("content");
-    meta.setAttribute(
-      "content",
-      "Guidelines for pulling and reviewing mandatory state Motor Vehicle Records (MVR) for DOT-regulated drivers.",
-    );
-    return () => {
-      document.title = prevTitle;
-      if (prevDesc) meta.setAttribute("content", prevDesc);
-    };
-  }, []);
+const PATH = "/checklist/initial-mvr";
+const TITLE = "Initial Motor Vehicle Record (MVR) — 49 CFR §391.23 | DQ Checklist";
+const DESC = "2026 guidelines for pulling and reviewing the mandatory initial state Motor Vehicle Record (MVR) for DOT-regulated drivers under 49 CFR §391.23.";
 
+const InitialMVR = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={TITLE}
+        description={DESC}
+        path={PATH}
+        jsonLd={[
+          articleLd({ title: TITLE, description: DESC, path: PATH }),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Initial MVR", path: PATH },
+          ]),
+        ]}
+      />
       <div className="mx-auto max-w-3xl px-6 py-10 sm:py-16">
         <Link
           to="/#checklist"

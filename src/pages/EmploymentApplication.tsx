@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, articleLd, breadcrumbLd } from "@/lib/seo";
 
 const REQUIREMENTS = [
   {
@@ -29,26 +29,25 @@ const REQUIREMENTS = [
   },
 ];
 
-const EmploymentApplication = () => {
-  useEffect(() => {
-    document.title = "Driver Employment Application 2026 | DOT Compliance";
-    const setMeta = (name: string, content: string) => {
-      let tag = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-      if (!tag) {
-        tag = document.createElement("meta");
-        tag.setAttribute("name", name);
-        document.head.appendChild(tag);
-      }
-      tag.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "2026 FMCSA Driver Employment Application requirements — 10 years of CMV history, 3 years of general employment, accidents, violations, and address history under 49 CFR §391.21.",
-    );
-  }, []);
+const PATH = "/checklist/employment-application";
+const TITLE = "Driver's Employment Application — 49 CFR §391.21 | DQ Checklist";
+const DESC = "2026 FMCSA Driver Employment Application requirements — 10 years of CMV history, 3 years of general employment, accidents, violations, and address history under 49 CFR §391.21.";
 
+const EmploymentApplication = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={TITLE}
+        description={DESC}
+        path={PATH}
+        jsonLd={[
+          articleLd({ title: TITLE, description: DESC, path: PATH }),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Employment Application", path: PATH },
+          ]),
+        ]}
+      />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-foreground/[0.06] blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[420px] w-[420px] translate-x-1/4 rounded-full bg-foreground/[0.04] blur-3xl" />

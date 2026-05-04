@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, BadgeCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, articleLd, breadcrumbLd } from "@/lib/seo";
 
 const REQUIREMENTS = [
   {
@@ -25,26 +25,26 @@ const REQUIREMENTS = [
   },
 ];
 
+const PATH = "/checklist/medical-certificate";
+const TITLE = "Medical Examiner's Certificate (MEC) — 49 CFR §391.43 | DQ Checklist";
+const DESC = "2026 FMCSA Medical Examiner's Certificate (MEC) compliance — verify examiners on the National Registry, validity rules, and the June 2025 electronic transmission update.";
+
 const MedicalCertificate = () => {
-  useEffect(() => {
-    document.title = "Medical Examiner Requirements 2026 | National DOT Compliance";
-    const setMeta = (name: string, content: string) => {
-      let tag = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-      if (!tag) {
-        tag = document.createElement("meta");
-        tag.setAttribute("name", name);
-        document.head.appendChild(tag);
-      }
-      tag.setAttribute("content", content);
-    };
-    setMeta(
-      "description",
-      "2026 FMCSA Medical Examiner's Certificate (MEC) compliance — verify examiners on the National Registry, validity rules, and the June 2025 electronic transmission update.",
-    );
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={TITLE}
+        description={DESC}
+        path={PATH}
+        jsonLd={[
+          articleLd({ title: TITLE, description: DESC, path: PATH }),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Medical Examiner's Certificate", path: PATH },
+          ]),
+        ]}
+      />
       {/* Ambient blurred background */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-foreground/[0.06] blur-3xl" />
