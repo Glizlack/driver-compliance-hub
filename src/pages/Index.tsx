@@ -1,13 +1,13 @@
-import { useState } from "react";
 import heroImage from "@/assets/hero-truck.jpg";
 import { CHECKLIST_ITEMS } from "@/config/checklistData";
-import { TRANSLATIONS, type Lang } from "@/config/i18n";
+import { TRANSLATIONS } from "@/config/i18n";
+import { useLang } from "@/contexts/LangContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ChecklistCard } from "@/components/ChecklistCard";
 import { SEO, breadcrumbLd } from "@/lib/seo";
 
 const Index = () => {
-  const [lang, setLang] = useState<Lang>("en");
+  const { lang, setLang } = useLang();
   const t = TRANSLATIONS[lang];
 
   return (
@@ -90,15 +90,21 @@ const Index = () => {
               <ChecklistCard key={item.id} item={item} index={i} />
             ))}
           </div>
+
+          {lang === "es" && t.aiDisclaimer && (
+            <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-foreground/55">
+              {t.aiDisclaimer}
+            </p>
+          )}
         </section>
 
         <section aria-label="Coverage" className="border-t border-white/5">
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-6 py-12 text-center">
             <span className="text-xs font-medium uppercase tracking-[0.25em] text-foreground/50">
-              Coverage
+              {t.coverageLabel}
             </span>
             <p className="font-display text-2xl text-foreground/90 sm:text-3xl">
-              United States · FMCSA Compliant
+              {t.coverageValue}
             </p>
           </div>
         </section>

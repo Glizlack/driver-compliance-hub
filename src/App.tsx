@@ -11,6 +11,7 @@ import EmploymentApplication from "./pages/EmploymentApplication.tsx";
 import InitialMVR from "./pages/InitialMVR.tsx";
 import RoadTest from "./pages/RoadTest.tsx";
 import SafetyPerformanceHistory from "./pages/SafetyPerformanceHistory.tsx";
+import { LangProvider } from "./contexts/LangContext";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <LangProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -32,6 +34,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </LangProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
