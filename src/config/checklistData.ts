@@ -19,6 +19,7 @@ export type ChecklistItem = {
   cta: string;
   href: string;
   details?: ChecklistDetails;
+  modalId?: "clearinghouse";
 };
 
 export const CHECKLIST_ITEMS: ChecklistItem[] = [
