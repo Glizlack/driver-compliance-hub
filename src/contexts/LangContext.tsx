@@ -18,6 +18,7 @@ export const LangProvider = ({ children }: { children: ReactNode }) => {
   }, [lang]);
 
   const setLang = (l: Lang) => {
+    console.log("[LangContext] setLang ->", l);
     setLangState(l);
     try {
       window.localStorage.setItem(STORAGE_KEY, l);
