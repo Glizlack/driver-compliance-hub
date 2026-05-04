@@ -66,23 +66,6 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
       "Mandatory 3-year investigation of driver safety and drug/alcohol history from all previous DOT-regulated employers. Must be completed within 30 days of hire.",
     cta: "Learn More",
     href: "/checklist/safety-performance-history",
-    details: {
-      regulatoryReference: "49 CFR §391.23",
-      summary:
-        "Safety Performance Investigation Requirements — written inquiries to all DOT-regulated employers from the previous 3 years. The Prospective Employee completes Part 1 (release/authorization); the Previous Employer completes Parts 2 & 3 (employment verification and safety/drug & alcohol history).",
-      keyRequirements: [
-        "Minimum Required Information — Employment Verification: general identification and exact dates of employment.",
-        "Minimum Required Information — Accident History: any 'recordable' accidents (§390.5) including dates, locations, and details on injuries or fatalities.",
-        "Minimum Required Information — Drug & Alcohol History: violations of prohibitions under 49 CFR Part 382 or Part 40. The Clearinghouse is primary, but manual inquiries are still required for some positions.",
-        "Documentation — Good Faith Efforts: document every contact attempt (fax, call logs, certified mail) if an employer fails to respond.",
-        "Retention: keep records in the Driver Investigation History (DIH) file for the duration of employment plus 3 years.",
-        "Driver Rights — Right to Review: drivers may submit a written request to review information provided by previous employers.",
-        "Driver Rights — Correction/Rebuttal: drivers may request corrections or submit a written rebuttal to the record.",
-      ],
-      resourceLabel: "Official FMCSA Safety Planner — §391.23",
-      resourceUrl:
-        "https://csa.fmcsa.dot.gov/safetyplanner/myfiles/sections.aspx?ch=23&sec=68",
-    },
   },
   {
     id: "clearinghouse",

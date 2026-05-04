@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowLeft, ArrowUpRight, Check, FileWarning, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Check, FileWarning, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PARTS = [
@@ -190,20 +190,6 @@ const SafetyPerformanceHistory = () => {
           </ul>
         </section>
 
-        {/* Download */}
-        <div
-          className="mt-12 flex justify-center animate-fade-up"
-          style={{ animationDelay: "320ms" }}
-        >
-          <a
-            href="/Safety_Performance_History_Form.pdf"
-            download=""
-            className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-4 text-base font-semibold text-background shadow-lg transition hover:scale-[1.02] hover:bg-foreground/90"
-          >
-            Download Safety Performance History Form
-            <ArrowUpRight className="ml-2 h-5 w-5" aria-hidden="true" />
-          </a>
-        </div>
       </div>
     </div>
   );
