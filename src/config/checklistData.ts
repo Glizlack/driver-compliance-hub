@@ -19,6 +19,7 @@ export type ChecklistItem = {
   cta: string;
   href: string;
   details?: ChecklistDetails;
+  modalId?: "clearinghouse";
 };
 
 export const CHECKLIST_ITEMS: ChecklistItem[] = [
@@ -73,8 +74,9 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     title: "Drug & Alcohol Clearinghouse Query",
     description:
       "Full pre-employment query of the FMCSA Clearinghouse is mandatory before the driver performs safety-sensitive functions.",
-    cta: "Run Query",
+    cta: "Learn More",
     href: "#",
+    modalId: "clearinghouse",
   },
 ];
 
