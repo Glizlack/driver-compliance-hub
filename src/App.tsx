@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import VerifyExaminer from "./pages/VerifyExaminer.tsx";
 import MedicalCertificate from "./pages/MedicalCertificate.tsx";
+import EmploymentApplication from "./pages/EmploymentApplication.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/verify-examiner" element={<VerifyExaminer />} />
           <Route path="/checklist/medical-certificate" element={<MedicalCertificate />} />
+          <Route path="/checklist/employment-application" element={<EmploymentApplication />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
