@@ -94,17 +94,22 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
                 </div>
               )}
 
-              {item.details?.resourceUrl && item.details?.resourceLabel && (
-                <a
-                  href={item.details.resourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-pill mt-10 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
-                >
-                  {item.details.resourceLabel}
-                  <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                </a>
-              )}
+              {item.details?.resourceUrl && item.details?.resourceLabel && (() => {
+                const resIsExternal = item.details.resourceUrl.startsWith("http");
+                const resIsDownload = /\.(docx?|pdf)$/i.test(item.details.resourceUrl);
+                return (
+                  <a
+                    href={item.details.resourceUrl}
+                    target={resIsExternal ? "_blank" : undefined}
+                    rel={resIsExternal ? "noopener noreferrer" : undefined}
+                    download={resIsDownload ? "" : undefined}
+                    className="glass-pill mt-10 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
+                  >
+                    {item.details.resourceLabel}
+                    <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </a>
+                );
+              })()}
             </SheetContent>
           </Sheet>
         )}
