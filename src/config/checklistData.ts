@@ -37,8 +37,8 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     title: "Initial MVR",
     description:
       "Motor Vehicle Record pulled from every state of residence in the last 3 years before the driver is placed in service.",
-    cta: "Order MVR",
-    href: "#",
+    cta: "Learn More",
+    href: "/checklist/initial-mvr",
   },
   {
     id: "road-test",
