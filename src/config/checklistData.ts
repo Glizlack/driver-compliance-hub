@@ -28,8 +28,8 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     title: "Driver's Employment Application",
     description:
       "A signed foundation for the DQF. Requires 10 years of CMV history and 3 years of general employment history.",
-    cta: "Download Application",
-    href: "/DOT_Employment_Application.docx",
+    cta: "Learn More",
+    href: "",
     details: {
       regulatoryReference: "49 CFR §391.21",
       summary:
@@ -42,9 +42,8 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
         "Detailed explanation of any gaps in employment exceeding 30 days.",
         "Specific statement on whether the driver has ever been denied or lost a license.",
       ],
-      resourceLabel: "Official FMCSA Safety Planner",
-      resourceUrl:
-        "https://csa.fmcsa.dot.gov/SafetyPlanner/MyFiles/Sections.aspx?ch=23&sec=66",
+      resourceLabel: "Download Application",
+      resourceUrl: "/DOT_Employment_Application.docx",
     },
   },
   {
