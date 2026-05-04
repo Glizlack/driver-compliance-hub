@@ -31,7 +31,7 @@ const Index = () => {
         />
         <div className="hero-gradient absolute inset-0" aria-hidden="true" />
 
-        <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <nav className="relative z-30 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
           <div className="font-display text-base font-semibold tracking-tight text-foreground">
             DQ<span className="text-foreground/50">·Checklist</span>
           </div>
