@@ -8,11 +8,80 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+const ClearinghouseModalBody = () => (
+  <div className="mt-4 space-y-5 text-sm leading-relaxed text-foreground/80">
+    <p>
+      <strong className="text-foreground">Mandatory Pre-Employment Check:</strong> Before a driver performs safety-sensitive functions, you must conduct a Full Pre-Employment Query. This confirms if the driver has unresolved drug/alcohol violations.
+    </p>
+
+    <div>
+      <h4 className="font-semibold text-foreground">Key Requirements</h4>
+      <ul className="mt-2 space-y-2">
+        <li className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+          <span><strong className="text-foreground">Specific Electronic Consent:</strong> The driver must log into their own account to provide consent; employers cannot do this for them.</span>
+        </li>
+        <li className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+          <span><strong className="text-foreground">30-Day Monitoring:</strong> FMCSA will notify you if new record information is added within 30 days of your query.</span>
+        </li>
+        <li className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+          <span><strong className="text-foreground">Registration:</strong> Both employer and driver must be registered.</span>
+        </li>
+        <li className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+          <span><strong className="text-foreground">Recordkeeping:</strong> Retain results for 3 years.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 className="font-semibold text-foreground">Driver Rights</h4>
+      <ul className="mt-2 space-y-2">
+        <li className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+          <span><strong className="text-foreground">Refusal:</strong> If they refuse consent, you cannot allow them to drive.</span>
+        </li>
+        <li className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+          <span><strong className="text-foreground">Petitions:</strong> Drivers can petition to correct administrative errors.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p className="rounded-lg border border-white/10 bg-white/5 p-4">
+      <strong className="text-foreground">Important Note:</strong> As of Jan 6, 2023, this query replaces the manual Safety Performance History for FMCSA drivers (though other DOT modes like FAA still require manual checks).
+    </p>
+
+    <div className="border-t border-white/10 pt-5">
+      <a
+        href="https://dot.gov"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+      >
+        View Full Query Guide (PDF)
+        <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+);
 
 export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: number }) => {
   const isExternal = item.href.startsWith("http");
   const isDownload = /\.(docx?|pdf)$/i.test(item.href);
   const hasDetails = !!item.details;
+  const hasModal = item.modalId === "clearinghouse";
 
   return (
     <article
@@ -37,7 +106,25 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-3">
-        {item.href ? (
+        {hasModal ? (
+          <Dialog>
+            <DialogTrigger className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground">
+              {item.cta}
+              <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+            </DialogTrigger>
+            <DialogContent className="max-h-[85vh] overflow-y-auto border-white/10 bg-[hsl(220_30%_4%/0.95)] text-foreground backdrop-blur-2xl sm:max-w-lg">
+              <DialogHeader>
+                <DialogTitle className="font-display text-2xl text-foreground">
+                  {item.title}
+                </DialogTitle>
+                <DialogDescription className="text-sm text-foreground/70">
+                  FMCSA Clearinghouse pre-employment query overview.
+                </DialogDescription>
+              </DialogHeader>
+              <ClearinghouseModalBody />
+            </DialogContent>
+          </Dialog>
+        ) : item.href ? (
           <a
             href={item.href}
             target={isExternal ? "_blank" : undefined}
