@@ -64,8 +64,8 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     title: "Safety Performance History",
     description:
       "Mandatory 3-year investigation of driver safety and drug/alcohol history from all previous DOT-regulated employers. Must be completed within 30 days of hire.",
-    cta: "Download Records Request Form",
-    href: "https://csa.fmcsa.dot.gov/safetyplanner/myfiles/sections.aspx?ch=23&sec=68",
+    cta: "Learn More",
+    href: "/checklist/safety-performance-history",
     details: {
       regulatoryReference: "49 CFR §391.23",
       summary:
