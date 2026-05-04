@@ -37,16 +37,18 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-3">
-        <a
-          href={item.href}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
-          download={isDownload ? "" : undefined}
-          className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
-        >
-          {item.cta}
-          <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-        </a>
+        {item.href ? (
+          <a
+            href={item.href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            download={isDownload ? "" : undefined}
+            className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
+          >
+            {item.cta}
+            <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+          </a>
+        ) : <span />}
 
         {hasDetails && (
           <Sheet>
@@ -92,17 +94,22 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
                 </div>
               )}
 
-              {item.details?.resourceUrl && item.details?.resourceLabel && (
-                <a
-                  href={item.details.resourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-pill mt-10 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
-                >
-                  {item.details.resourceLabel}
-                  <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                </a>
-              )}
+              {item.details?.resourceUrl && item.details?.resourceLabel && (() => {
+                const resIsExternal = item.details.resourceUrl.startsWith("http");
+                const resIsDownload = /\.(docx?|pdf)$/i.test(item.details.resourceUrl);
+                return (
+                  <a
+                    href={item.details.resourceUrl}
+                    target={resIsExternal ? "_blank" : undefined}
+                    rel={resIsExternal ? "noopener noreferrer" : undefined}
+                    download={resIsDownload ? "" : undefined}
+                    className="glass-pill mt-10 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
+                  >
+                    {item.details.resourceLabel}
+                    <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </a>
+                );
+              })()}
             </SheetContent>
           </Sheet>
         )}
