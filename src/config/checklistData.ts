@@ -75,7 +75,8 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     description:
       "Full pre-employment query of the FMCSA Clearinghouse is mandatory before the driver performs safety-sensitive functions.",
     cta: "Learn More",
-    href: "#clearinghouse-modal",
+    href: "#",
+    modalId: "clearinghouse",
   },
 ];
 
