@@ -32,7 +32,6 @@ export const LanguageSwitcher = ({ value, onChange }: Props) => {
                 role="option"
                 aria-selected={value === l.code}
                 onClick={() => {
-                  console.log("[LangSwitcher] clicked", l.code);
                   onChange(l.code);
                   setOpen(false);
                 }}
