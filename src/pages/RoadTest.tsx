@@ -78,14 +78,6 @@ const RoadTest = () => {
             Requirements under 49 CFR § 391.31 for operating commercial motor vehicles.
           </p>
 
-          <a
-            href="/Driver_Road_Test_Certificate.pdf"
-            download=""
-            className="glass-pill mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
-          >
-            Download Road Test Certificate Template
-            <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
-          </a>
         </header>
 
         {/* Acceptable Documentation */}
@@ -135,6 +127,15 @@ const RoadTest = () => {
             ))}
           </ul>
         </section>
+
+        <a
+          href="/Driver_Road_Test_Certificate.pdf"
+          download=""
+          className="glass-pill mt-10 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
+        >
+          Download Road Test Certificate Template
+          <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+        </a>
       </div>
     </div>
   );
