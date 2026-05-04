@@ -1,6 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import type { ChecklistItem } from "@/config/checklistData";
+import { pick, type ChecklistItem } from "@/config/checklistData";
+import { TRANSLATIONS } from "@/config/i18n";
+import { useLang } from "@/contexts/LangContext";
 import {
   Sheet,
   SheetContent,
@@ -18,67 +20,75 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-const ClearinghouseModalBody = () => (
-  <div className="mt-4 space-y-5 text-sm leading-relaxed text-foreground/80">
-    <p>
-      <strong className="text-foreground">Mandatory Pre-Employment Check:</strong> Before a driver performs safety-sensitive functions, you must conduct a Full Pre-Employment Query. This confirms if the driver has unresolved drug/alcohol violations.
-    </p>
+const ClearinghouseModalBody = () => {
+  const { lang } = useLang();
+  const m = TRANSLATIONS[lang].modal;
+  return (
+    <div className="mt-4 space-y-5 text-sm leading-relaxed text-foreground/80">
+      <p>
+        <strong className="text-foreground">{m.mandatoryLabel}</strong> {m.mandatoryBody}
+      </p>
 
-    <div>
-      <h4 className="font-semibold text-foreground">Key Requirements</h4>
-      <ul className="mt-2 space-y-2">
-        <li className="flex gap-3">
-          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-          <span><strong className="text-foreground">Specific Electronic Consent:</strong> The driver must log into their own account to provide consent; employers cannot do this for them.</span>
-        </li>
-        <li className="flex gap-3">
-          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-          <span><strong className="text-foreground">30-Day Monitoring:</strong> FMCSA will notify you if new record information is added within 30 days of your query.</span>
-        </li>
-        <li className="flex gap-3">
-          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-          <span><strong className="text-foreground">Registration:</strong> Both employer and driver must be registered.</span>
-        </li>
-        <li className="flex gap-3">
-          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-          <span><strong className="text-foreground">Recordkeeping:</strong> Retain results for 3 years.</span>
-        </li>
-      </ul>
+      <div>
+        <h4 className="font-semibold text-foreground">{m.keyRequirements}</h4>
+        <ul className="mt-2 space-y-2">
+          {[
+            [m.consentLabel, m.consentBody],
+            [m.monitoringLabel, m.monitoringBody],
+            [m.registrationLabel, m.registrationBody],
+            [m.recordkeepingLabel, m.recordkeepingBody],
+          ].map(([label, body]) => (
+            <li key={label} className="flex gap-3">
+              <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+              <span><strong className="text-foreground">{label}</strong> {body}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-semibold text-foreground">{m.driverRights}</h4>
+        <ul className="mt-2 space-y-2">
+          {[
+            [m.refusalLabel, m.refusalBody],
+            [m.petitionsLabel, m.petitionsBody],
+          ].map(([label, body]) => (
+            <li key={label} className="flex gap-3">
+              <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
+              <span><strong className="text-foreground">{label}</strong> {body}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p className="rounded-lg border border-white/10 bg-white/5 p-4">
+        <strong className="text-foreground">{m.importantLabel}</strong> {m.importantBody}
+      </p>
+
+      <div className="border-t border-white/10 pt-5">
+        <a
+          href="https://dot.gov"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+        >
+          {m.pdfButton}
+          <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+        </a>
+      </div>
     </div>
-
-    <div>
-      <h4 className="font-semibold text-foreground">Driver Rights</h4>
-      <ul className="mt-2 space-y-2">
-        <li className="flex gap-3">
-          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-          <span><strong className="text-foreground">Refusal:</strong> If they refuse consent, you cannot allow them to drive.</span>
-        </li>
-        <li className="flex gap-3">
-          <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-          <span><strong className="text-foreground">Petitions:</strong> Drivers can petition to correct administrative errors.</span>
-        </li>
-      </ul>
-    </div>
-
-    <p className="rounded-lg border border-white/10 bg-white/5 p-4">
-      <strong className="text-foreground">Important Note:</strong> As of Jan 6, 2023, this query replaces the manual Safety Performance History for FMCSA drivers (though other DOT modes like FAA still require manual checks).
-    </p>
-
-    <div className="border-t border-white/10 pt-5">
-      <a
-        href="https://dot.gov"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
-      >
-        View Full Query Guide (PDF)
-        <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
-      </a>
-    </div>
-  </div>
-);
+  );
+};
 
 export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: number }) => {
+  const { lang } = useLang();
+  const m = TRANSLATIONS[lang].modal;
+  const title = pick(lang, item.title);
+  const description = pick(lang, item.description);
+  const cta = pick(lang, item.cta);
+  const summary = pick(lang, item.details?.summary);
+  const resourceLabel = pick(lang, item.details?.resourceLabel);
+
   const isExternal = item.href.startsWith("http");
   const isDownload = /\.(docx?|pdf)$/i.test(item.href);
   const hasDetails = !!item.details;
@@ -101,25 +111,25 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
           )}
         </div>
         <h3 className="font-display mt-5 text-xl font-semibold leading-snug text-foreground">
-          {item.title}
+          {title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-foreground/70">{item.description}</p>
+        <p className="mt-3 text-sm leading-relaxed text-foreground/70">{description}</p>
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-3">
         {hasModal ? (
           <Dialog>
             <DialogTrigger className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground">
-              {item.cta}
+              {cta}
               <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </DialogTrigger>
             <DialogContent className="max-h-[85vh] overflow-y-auto border-white/10 bg-[hsl(220_30%_4%/0.95)] text-foreground backdrop-blur-2xl sm:max-w-lg">
               <DialogHeader>
                 <DialogTitle className="font-display text-2xl text-foreground">
-                  {item.title}
+                  {title}
                 </DialogTitle>
                 <DialogDescription className="text-sm text-foreground/70">
-                  FMCSA Clearinghouse pre-employment query overview.
+                  {m.description}
                 </DialogDescription>
               </DialogHeader>
               <ClearinghouseModalBody />
@@ -134,7 +144,7 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
               download={isDownload ? "" : undefined}
               className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
             >
-              {item.cta}
+              {cta}
               <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </a>
           ) : (
@@ -142,7 +152,7 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
               to={item.href}
               className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
             >
-              {item.cta}
+              {cta}
               <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
             </Link>
           )
@@ -151,7 +161,7 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
         {hasDetails && (
           <Sheet>
             <SheetTrigger className="rounded-full px-3 py-1.5 text-xs font-medium text-foreground/70 transition hover:bg-white/5 hover:text-foreground">
-              Learn More
+              {cta}
             </SheetTrigger>
             <SheetContent
               side="right"
@@ -164,11 +174,11 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
                   </span>
                 )}
                 <SheetTitle className="font-display text-2xl text-foreground">
-                  {item.title}
+                  {title}
                 </SheetTitle>
-                {item.details?.summary && (
+                {summary && (
                   <SheetDescription className="text-sm leading-relaxed text-foreground/70">
-                    {item.details.summary}
+                    {summary}
                   </SheetDescription>
                 )}
               </SheetHeader>
@@ -176,7 +186,7 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
               {item.details?.keyRequirements && (
                 <div className="mt-8">
                   <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
-                    Key Requirements
+                    {m.keyRequirements}
                   </h4>
                   <ul className="mt-4 space-y-3">
                     {item.details.keyRequirements.map((req, i) => (
@@ -185,25 +195,25 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
                         className="flex gap-3 text-sm leading-relaxed text-foreground/80"
                       >
                         <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/50" />
-                        <span>{req}</span>
+                        <span>{pick(lang, req)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
 
-              {item.details?.resourceUrl && item.details?.resourceLabel && (() => {
-                const resIsExternal = item.details.resourceUrl.startsWith("http");
-                const resIsDownload = /\.(docx?|pdf)$/i.test(item.details.resourceUrl);
+              {item.details?.resourceUrl && resourceLabel && (() => {
+                const resIsExternal = item.details!.resourceUrl!.startsWith("http");
+                const resIsDownload = /\.(docx?|pdf)$/i.test(item.details!.resourceUrl!);
                 return (
                   <a
-                    href={item.details.resourceUrl}
+                    href={item.details!.resourceUrl}
                     target={resIsExternal ? "_blank" : undefined}
                     rel={resIsExternal ? "noopener noreferrer" : undefined}
                     download={resIsDownload ? "" : undefined}
                     className="glass-pill mt-10 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-foreground transition hover:bg-white/15"
                   >
-                    {item.details.resourceLabel}
+                    {resourceLabel}
                     <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </a>
                 );
