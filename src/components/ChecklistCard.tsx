@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import type { ChecklistItem } from "@/config/checklistData";
 import {
   Sheet,
@@ -125,16 +126,26 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
             </DialogContent>
           </Dialog>
         ) : item.href ? (
-          <a
-            href={item.href}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            download={isDownload ? "" : undefined}
-            className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
-          >
-            {item.cta}
-            <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-          </a>
+          isExternal || isDownload || item.href.startsWith("#") ? (
+            <a
+              href={item.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              download={isDownload ? "" : undefined}
+              className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
+            >
+              {item.cta}
+              <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+            </a>
+          ) : (
+            <Link
+              to={item.href}
+              className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground"
+            >
+              {item.cta}
+              <ArrowUpRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+            </Link>
+          )
         ) : <span />}
 
         {hasDetails && (
