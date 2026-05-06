@@ -75,6 +75,6 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://dqchecklist.com/sitemap.xml
 # AI/LLM hint file
 # /llms.txt
