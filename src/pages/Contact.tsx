@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
-import { SEO } from "@/lib/seo";
+import { SEO, breadcrumbLd } from "@/lib/seo";
 
 const Contact = () => {
   const { lang } = useLang();
@@ -23,9 +23,13 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Contact Us | DQ Checklist"
-        description="Contact DQ Checklist."
+        title="Contact DQ Checklist | DOT Compliance Help"
+        description="Contact DQ Checklist for questions about driver qualification files and DOT compliance."
         path="/contact"
+        jsonLd={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
       />
       <div className="mx-auto max-w-3xl px-6 py-20">
         <Link

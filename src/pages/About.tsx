@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
-import { SEO } from "@/lib/seo";
+import { SEO, breadcrumbLd } from "@/lib/seo";
 
 const About = () => {
   const { lang } = useLang();
@@ -21,9 +21,13 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="About Us | DQ Checklist"
-        description="About DQ Checklist and Steve Martin."
+        title="About DQ Checklist | Driver Qualification Help"
+        description="About DQ Checklist — helping owner operators and small fleets stay DOT compliant without high fees."
         path="/about"
+        jsonLd={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
       />
       <div className="mx-auto max-w-3xl px-6 py-20">
         <Link
