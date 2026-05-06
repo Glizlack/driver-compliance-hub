@@ -10,7 +10,7 @@ export const LangProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>(() => {
     if (typeof window === "undefined") return "en";
     const stored = window.localStorage.getItem(STORAGE_KEY) as Lang | null;
-    return stored === "es" || stored === "pa" || stored === "en" ? stored : "en";
+    return stored === "es" || stored === "en" ? stored : "en";
   });
 
   useEffect(() => {
@@ -36,8 +36,7 @@ export const useLang = () => {
 };
 
 /** Pick a localized string. Falls back to English when the requested locale is missing. */
-export const tr = (lang: Lang, en: string, es?: string, pa?: string): string => {
+export const tr = (lang: Lang, en: string, es?: string): string => {
   if (lang === "es" && es) return es;
-  if (lang === "pa" && pa) return pa;
   return en;
 };

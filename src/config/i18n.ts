@@ -1,10 +1,9 @@
 // Minimal i18n scaffold — extend strings as needed.
-export type Lang = "en" | "es" | "pa";
+export type Lang = "en" | "es";
 
 export const LANGUAGES: { code: Lang; label: string; native: string }[] = [
   { code: "en", label: "English", native: "English" },
   { code: "es", label: "Spanish", native: "Español" },
-  { code: "pa", label: "Punjabi", native: "ਪੰਜਾਬੀ" },
 ];
 
 type Dict = {
@@ -128,46 +127,6 @@ export const TRANSLATIONS: Record<Lang, Dict> = {
       importantBody:
         "A partir del 6 de enero de 2023, esta consulta reemplaza el Historial de Desempeño de Seguridad manual para conductores de la FMCSA (aunque otras modalidades del DOT, como la FAA, aún requieren verificaciones manuales).",
       pdfButton: "Ver la Guía Completa de Consulta (PDF)",
-    },
-  },
-  pa: {
-    eyebrow: "2026 · ਹੇਠਲੇ 48 ਰਾਜ",
-    heroTitle: "ਫੈਡਰਲ ਡਰਾਈਵਰ ਯੋਗਤਾ ਚੈੱਕਲਿਸਟ।",
-    heroSubtitle:
-      "ਹਰ ਵਪਾਰਕ ਡਰਾਈਵਰ ਫਾਈਲ ਵਿੱਚ ਛੇ ਫੈਡਰਲ ਤੌਰ 'ਤੇ ਲੋੜੀਂਦੇ ਦਸਤਾਵੇਜ਼।",
-    heroCta: "6-ਪੁਆਇੰਟ ਚੈੱਕਲਿਸਟ ਵੇਖੋ",
-    sectionTitle: "6-ਪੁਆਇੰਟ ਅਨੁਪਾਲਨ ਜਾਂਚ",
-    sectionSubtitle: "ਹਰ ਆਈਟਮ FMCSA ਦੇ ਖਾਸ ਨਿਯਮ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ।",
-    footer: "ਸਿਰਫ਼ ਜਾਣਕਾਰੀ ਲਈ। ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ।",
-    back: "Back",
-    aiDisclaimer: "",
-    coverageLabel: "Coverage",
-    coverageValue: "United States · FMCSA Compliant",
-    modal: {
-      description: "FMCSA Clearinghouse pre-employment query overview.",
-      mandatoryLabel: "Mandatory Pre-Employment Check:",
-      mandatoryBody:
-        "Before a driver performs safety-sensitive functions, you must conduct a Full Pre-Employment Query.",
-      keyRequirements: "Key Requirements",
-      consentLabel: "Specific Electronic Consent:",
-      consentBody:
-        "The driver must log into their own account to provide consent.",
-      monitoringLabel: "30-Day Monitoring:",
-      monitoringBody:
-        "FMCSA will notify you if new record information is added within 30 days.",
-      registrationLabel: "Registration:",
-      registrationBody: "Both employer and driver must be registered.",
-      recordkeepingLabel: "Recordkeeping:",
-      recordkeepingBody: "Retain results for 3 years.",
-      driverRights: "Driver Rights",
-      refusalLabel: "Refusal:",
-      refusalBody: "If they refuse consent, you cannot allow them to drive.",
-      petitionsLabel: "Petitions:",
-      petitionsBody: "Drivers can petition to correct administrative errors.",
-      importantLabel: "Important Note:",
-      importantBody:
-        "As of Jan 6, 2023, this query replaces the manual Safety Performance History for FMCSA drivers.",
-      pdfButton: "View Full Query Guide (PDF)",
     },
   },
 };
