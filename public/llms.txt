@@ -1,6 +1,6 @@
 # Federal Driver Qualification Checklist
 
-> A concise, authoritative 6-point Driver Qualification (DQ) File checklist for U.S. DOT/FMCSA-regulated motor carriers and commercial drivers. Covers what each requirement is, the governing CFR citation, retention rules, and driver rights. Information is general guidance, not legal advice. Jurisdiction: United States (lower 48). Last reviewed: 2026.
+> A concise, authoritative 6-point Driver Qualification (DQ) File checklist for U.S. DOT/FMCSA-regulated motor carriers and commercial drivers. Covers what each requirement is, the governing CFR citation, retention rules, and driver rights. Information is general guidance, not legal advice. Jurisdiction: United States. Last reviewed: 2026.
 
 ## About this site
 
