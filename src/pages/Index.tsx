@@ -112,9 +112,9 @@ const Index = () => {
       </main>
 
       <footer className="border-t border-white/5">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-foreground/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} DQ Checklist</p>
-          <div className="flex items-center gap-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-6 py-8 text-xs text-foreground/50 sm:grid-cols-3">
+          <p className="text-center sm:text-left">© {new Date().getFullYear()} DQ Checklist</p>
+          <div className="flex justify-center gap-4">
             <Link to="/about" className="hover:text-foreground">
               {lang === "es" ? "Sobre nosotros" : "About Us"}
             </Link>
@@ -125,7 +125,7 @@ const Index = () => {
               {lang === "es" ? "Política de Privacidad" : "Privacy Policy"}
             </Link>
           </div>
-          <p className="max-w-xl text-center sm:text-right">{t.footer}</p>
+          <p className="max-w-xl text-center sm:ml-auto sm:text-right">{t.footer}</p>
         </div>
       </footer>
     </div>
