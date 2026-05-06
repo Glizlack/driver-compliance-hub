@@ -12,6 +12,8 @@ import InitialMVR from "./pages/InitialMVR.tsx";
 import RoadTest from "./pages/RoadTest.tsx";
 import SafetyPerformanceHistory from "./pages/SafetyPerformanceHistory.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import About from "./pages/About.tsx";
+import Contact from "./pages/Contact.tsx";
 import { LangProvider } from "./contexts/LangContext";
 
 const queryClient = new QueryClient();
