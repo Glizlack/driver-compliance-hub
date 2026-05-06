@@ -5,6 +5,7 @@ import { useLang } from "@/contexts/LangContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ChecklistCard } from "@/components/ChecklistCard";
 import { SEO, breadcrumbLd } from "@/lib/seo";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const { lang, setLang } = useLang();
@@ -110,9 +111,43 @@ const Index = () => {
         </section>
       </main>
 
+      <section aria-label="About and contact" className="border-t border-white/5">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:grid-cols-2">
+          <div>
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-foreground/50">
+              {lang === "es" ? "Sobre nosotros" : "About Us"}
+            </span>
+            <p className="mt-4 text-base leading-relaxed text-foreground/80">
+              {lang === "es"
+                ? "Hola, soy Steve Martin. Mi objetivo es ayudar a los Owner Operators y a las pequeñas flotas a mantenerse en cumplimiento sin cobrar tarifas elevadas."
+                : "Hi, I am Steve Martin. My goal is to help Owner Operator's and small fleets stay compliant without charging high fee's!!"}
+            </p>
+          </div>
+          <div>
+            <span className="text-xs font-medium uppercase tracking-[0.25em] text-foreground/50">
+              {lang === "es" ? "Contáctenos" : "Contact Us"}
+            </span>
+            <p className="mt-4 text-base leading-relaxed text-foreground/80">
+              {lang === "es" ? "Envíenos un correo a " : "Email us at "}
+              <a
+                href="mailto:fmcsahelper@gmail.com"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                fmcsahelper@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t border-white/5">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-foreground/50 sm:flex-row">
           <p>© {new Date().getFullYear()} DQ Checklist</p>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy" className="hover:text-foreground">
+              {lang === "es" ? "Política de Privacidad" : "Privacy Policy"}
+            </Link>
+          </div>
           <p className="max-w-xl text-center sm:text-right">{t.footer}</p>
         </div>
       </footer>
