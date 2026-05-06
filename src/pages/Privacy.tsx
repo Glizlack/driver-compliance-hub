@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { TRANSLATIONS } from "@/config/i18n";
 import { useLang } from "@/contexts/LangContext";
-import { SEO } from "@/lib/seo";
+import { SEO, breadcrumbLd } from "@/lib/seo";
 
 const Privacy = () => {
   const { lang } = useLang();
@@ -37,6 +37,10 @@ const Privacy = () => {
         title="Privacy Policy | DQ Checklist"
         description="Privacy policy for the Federal Driver Qualification Checklist site."
         path="/privacy"
+        jsonLd={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Privacy", path: "/privacy" },
+        ])}
       />
       <div className="mx-auto max-w-3xl px-6 py-20">
         <Link to="/" className="text-sm text-foreground/60 hover:text-foreground">
