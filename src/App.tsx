@@ -11,6 +11,7 @@ import EmploymentApplication from "./pages/EmploymentApplication.tsx";
 import InitialMVR from "./pages/InitialMVR.tsx";
 import RoadTest from "./pages/RoadTest.tsx";
 import SafetyPerformanceHistory from "./pages/SafetyPerformanceHistory.tsx";
+import Privacy from "./pages/Privacy.tsx";
 import { LangProvider } from "./contexts/LangContext";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/checklist/initial-mvr" element={<InitialMVR />} />
           <Route path="/checklist/road-test" element={<RoadTest />} />
           <Route path="/checklist/safety-performance-history" element={<SafetyPerformanceHistory />} />
+          <Route path="/privacy" element={<Privacy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
