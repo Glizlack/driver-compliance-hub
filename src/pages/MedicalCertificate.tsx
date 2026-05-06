@@ -44,7 +44,7 @@ const REQUIREMENTS = [
 ];
 
 const PATH = "/checklist/medical-certificate";
-const TITLE = "Medical Examiner's Certificate (MEC) — 49 CFR §391.43 | DQ Checklist";
+const TITLE = "Medical Examiner's Certificate — 49 CFR §391.43";
 const DESC = "2026 FMCSA Medical Examiner's Certificate (MEC) compliance — verify examiners on the National Registry, validity rules, and the June 2025 electronic transmission update.";
 
 const MedicalCertificate = () => {
