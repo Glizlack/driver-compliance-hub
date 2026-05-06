@@ -15,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Federal Driver Qualification Checklist | 2026 DOT Compliance Guide"
-        description="The 2026 6-point DOT Driver Qualification File checklist for commercial drivers and fleets across the lower 48 — MVR, Clearinghouse, Medical Card, Safety History and more."
+        description="The 2026 6-point DOT Driver Qualification File checklist for commercial drivers and fleets across the United States — MVR, Clearinghouse, Medical Card, Safety History and more."
         path="/"
         jsonLd={breadcrumbLd([{ name: "Home", path: "/" }])}
       />
