@@ -45,7 +45,7 @@ type Dict = {
 
 export const TRANSLATIONS: Record<Lang, Dict> = {
   en: {
-    eyebrow: "2026 and United States",
+    eyebrow: "2026 - United States",
     heroTitle: "The Federal Driver Qualification Checklist.",
     heroSubtitle:
       "Six federally required documents every commercial driver file must contain before a wheel turns.",
@@ -87,7 +87,7 @@ export const TRANSLATIONS: Record<Lang, Dict> = {
     },
   },
   es: {
-    eyebrow: "2026 y Estados Unidos",
+    eyebrow: "2026 - Estados Unidos",
     heroTitle: "Lista Federal de Calificación del Conductor.",
     heroSubtitle:
       "Seis documentos exigidos por la ley federal que debe contener todo expediente de conductor comercial antes de circular.",
