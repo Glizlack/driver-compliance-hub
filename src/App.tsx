@@ -34,6 +34,8 @@ const App = () => (
           <Route path="/checklist/road-test" element={<RoadTest />} />
           <Route path="/checklist/safety-performance-history" element={<SafetyPerformanceHistory />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
