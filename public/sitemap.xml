@@ -1,61 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fmcsahelper.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/" />
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/checklist/employment-application</loc>
-    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/employment-application" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/employment-application" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/employment-application" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/checklist/employment-application</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/employment-application" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/employment-application" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/employment-application" />
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/checklist/initial-mvr</loc>
-    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/initial-mvr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/initial-mvr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/initial-mvr" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/checklist/initial-mvr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/initial-mvr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/initial-mvr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/initial-mvr" />
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/checklist/road-test</loc>
-    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/road-test" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/road-test" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/road-test" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/checklist/road-test</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/road-test" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/road-test" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/road-test" />
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/checklist/medical-certificate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/medical-certificate" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/medical-certificate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/medical-certificate" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/checklist/medical-certificate</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/medical-certificate" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/medical-certificate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/medical-certificate" />
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/checklist/safety-performance-history</loc>
-    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/safety-performance-history" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/safety-performance-history" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/safety-performance-history" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/checklist/safety-performance-history</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/checklist/safety-performance-history" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/checklist/safety-performance-history" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/checklist/safety-performance-history" />
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/verify-examiner</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/verify-examiner" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/verify-examiner" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/verify-examiner" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/verify-examiner</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/verify-examiner" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/verify-examiner" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/verify-examiner" />
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/about" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/about" />
     <lastmod>2026-05-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/contact" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/contact" />
     <lastmod>2026-05-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://fmcsahelper.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/privacy" />
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://fmcsahelper.com/es/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fmcsahelper.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fmcsahelper.com/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fmcsahelper.com/privacy" />
     <lastmod>2026-05-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
