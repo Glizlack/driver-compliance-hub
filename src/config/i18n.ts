@@ -1,9 +1,9 @@
-// Minimal i18n scaffold — extend strings as needed.
+// Minimal i18n scaffold - extend strings as needed.
 export type Lang = "en" | "es";
 
 export const LANGUAGES: { code: Lang; label: string; native: string }[] = [
   { code: "en", label: "English", native: "English" },
-  { code: "es", label: "Spanish", native: "Español" },
+  { code: "es", label: "Spanish", native: "Espanol" },
 ];
 
 type Dict = {
@@ -18,7 +18,6 @@ type Dict = {
   aiDisclaimer: string;
   coverageLabel: string;
   coverageValue: string;
-  // Clearinghouse modal
   modal: {
     description: string;
     mandatoryLabel: string;
@@ -45,88 +44,90 @@ type Dict = {
 
 export const TRANSLATIONS: Record<Lang, Dict> = {
   en: {
-    eyebrow: "2026 - United States",
-    heroTitle: "The Federal Driver Qualification Checklist.",
+    eyebrow: "2026 Federal Compliance Guidance",
+    heroTitle: "Stay audit-ready. Keep every driver qualified.",
     heroSubtitle:
-      "Six federally required documents every commercial driver file must contain before a wheel turns.",
-    heroCta: "View the 6-point checklist",
-    sectionTitle: "The 6-Point Compliance Check",
+      "Clear federal guidance for owner-operators and small fleets, with official FMCSA sources and practical checklists.",
+    heroCta: "Build My Checklist",
+    sectionTitle: "Compliance guidance built for the workday",
     sectionSubtitle:
-      "Each item maps to a specific FMCSA regulation. Tap a card to take action.",
+      "Start with hiring requirements, then keep annual reviews and regulatory updates within reach.",
     footer: "Informational only. Not legal advice. Verify against current FMCSA regulations.",
     back: "Back",
     aiDisclaimer:
       "Note: These terms have been translated with AI. Please double-check the translation for accuracy.",
     coverageLabel: "Coverage",
-    coverageValue: "United States · FMCSA Compliant",
+    coverageValue: "United States - Based on Official FMCSA Resources",
     modal: {
-      description: "FMCSA Clearinghouse pre-employment query overview.",
+      description: "FMCSA Clearinghouse pre-employment and annual query overview.",
       mandatoryLabel: "Mandatory Pre-Employment Check:",
       mandatoryBody:
-        "Before a driver performs safety-sensitive functions, you must conduct a Full Pre-Employment Query. This confirms if the driver has unresolved drug/alcohol violations.",
+        "Before a CDL/CLP driver performs safety-sensitive functions, you must conduct a Full Pre-Employment Query. This confirms whether the driver has unresolved drug/alcohol violations.",
       keyRequirements: "Key Requirements",
       consentLabel: "Specific Electronic Consent:",
       consentBody:
-        "The driver must log into their own account to provide consent; employers cannot do this for them.",
-      monitoringLabel: "30-Day Monitoring:",
+        "For a full query, the driver must provide electronic consent in the Clearinghouse; employers cannot do this for them.",
+      monitoringLabel: "Annual Queries:",
       monitoringBody:
-        "FMCSA will notify you if new record information is added within 30 days of your query.",
+        "Employers of CDL drivers must conduct a query at least once every 12 months during employment.",
       registrationLabel: "Registration:",
-      registrationBody: "Both employer and driver must be registered.",
+      registrationBody: "Employers and drivers must be registered when required for a full query.",
       recordkeepingLabel: "Recordkeeping:",
-      recordkeepingBody: "Retain results for 3 years.",
+      recordkeepingBody:
+        "The Clearinghouse stores query history; employers must retain records of limited consent for 3 years.",
       driverRights: "Driver Rights",
       refusalLabel: "Refusal:",
-      refusalBody: "If they refuse consent, you cannot allow them to drive.",
+      refusalBody: "If a driver refuses required consent, you cannot allow safety-sensitive work.",
       petitionsLabel: "Petitions:",
       petitionsBody: "Drivers can petition to correct administrative errors.",
-      importantLabel: "Important Note:",
+      importantLabel: "Official Source:",
       importantBody:
-        "As of Jan 6, 2023, this query replaces the manual Safety Performance History for FMCSA drivers (though other DOT modes like FAA still require manual checks).",
-      pdfButton: "View Full Query Guide (PDF)",
+        "Confirm query types, consent rules, and any changes directly through FMCSA Clearinghouse guidance.",
+      pdfButton: "Open Official Clearinghouse Guidance",
     },
   },
   es: {
-    eyebrow: "2026 - Estados Unidos",
-    heroTitle: "Lista Federal de Calificación del Conductor.",
+    eyebrow: "Guia Federal de Cumplimiento 2026",
+    heroTitle: "Mantengase listo para auditorias. Mantenga calificado a cada conductor.",
     heroSubtitle:
-      "Seis documentos exigidos por la ley federal que debe contener todo expediente de conductor comercial antes de circular.",
-    heroCta: "Ver la lista de 6 puntos",
-    sectionTitle: "Verificación de Cumplimiento de 6 Puntos",
+      "Orientacion federal clara para operadores propietarios y flotillas, con fuentes oficiales de la FMCSA y listas practicas.",
+    heroCta: "Crear Mi Lista",
+    sectionTitle: "Orientacion de cumplimiento para el trabajo diario",
     sectionSubtitle:
-      "Cada punto corresponde a una regulación específica de la FMCSA. Toque una tarjeta para actuar.",
+      "Comience con requisitos de contratacion y mantenga a mano las revisiones anuales y actualizaciones regulatorias.",
     footer:
-      "Solo con fines informativos. No constituye asesoría legal. Verifique con las regulaciones vigentes de la FMCSA.",
-    back: "Atrás",
+      "Solo con fines informativos. No constituye asesoria legal. Verifique con las regulaciones vigentes de la FMCSA.",
+    back: "Atras",
     aiDisclaimer:
-      "Nota: estos términos han sido traducidos con inteligencia artificial. Verifique la exactitud de la traducción.",
+      "Nota: estos terminos han sido traducidos con inteligencia artificial. Verifique la exactitud de la traduccion.",
     coverageLabel: "Cobertura",
-    coverageValue: "Estados Unidos · Conforme a la FMCSA",
+    coverageValue: "Estados Unidos - Basado en Recursos Oficiales FMCSA",
     modal: {
-      description: "Resumen de la consulta previa al empleo del Clearinghouse de la FMCSA.",
-      mandatoryLabel: "Verificación Obligatoria Previa al Empleo:",
+      description: "Resumen de las consultas previas al empleo y anuales del Clearinghouse de la FMCSA.",
+      mandatoryLabel: "Verificacion Obligatoria Previa al Empleo:",
       mandatoryBody:
-        "Antes de que un conductor realice funciones sensibles a la seguridad, debe realizar una Consulta Completa Previa al Empleo. Esto confirma si el conductor tiene infracciones de drogas/alcohol sin resolver.",
+        "Antes de que un conductor con CDL/CLP realice funciones sensibles a la seguridad, debe realizar una Consulta Completa Previa al Empleo para confirmar si existen infracciones sin resolver.",
       keyRequirements: "Requisitos Clave",
-      consentLabel: "Consentimiento Electrónico Específico:",
+      consentLabel: "Consentimiento Electronico Especifico:",
       consentBody:
-        "El conductor debe iniciar sesión en su propia cuenta para dar consentimiento; los empleadores no pueden hacerlo por él.",
-      monitoringLabel: "Monitoreo de 30 Días:",
+        "Para una consulta completa, el conductor debe proporcionar consentimiento electronico en el Clearinghouse; el empleador no puede hacerlo por el conductor.",
+      monitoringLabel: "Consultas Anuales:",
       monitoringBody:
-        "La FMCSA le notificará si se agrega nueva información al registro dentro de los 30 días posteriores a su consulta.",
+        "Los empleadores de conductores con CDL deben realizar una consulta al menos una vez cada 12 meses durante el empleo.",
       registrationLabel: "Registro:",
-      registrationBody: "Tanto el empleador como el conductor deben estar registrados.",
-      recordkeepingLabel: "Conservación de Registros:",
-      recordkeepingBody: "Conserve los resultados durante 3 años.",
+      registrationBody: "Los empleadores y conductores deben estar registrados cuando se requiera para una consulta completa.",
+      recordkeepingLabel: "Conservacion de Registros:",
+      recordkeepingBody:
+        "El Clearinghouse conserva el historial de consultas; los empleadores deben conservar durante 3 anos los registros de consentimiento limitado.",
       driverRights: "Derechos del Conductor",
       refusalLabel: "Negativa:",
-      refusalBody: "Si rechaza dar su consentimiento, no puede permitir que conduzca.",
+      refusalBody: "Si el conductor rechaza el consentimiento requerido, no se le puede permitir trabajo sensible a la seguridad.",
       petitionsLabel: "Peticiones:",
-      petitionsBody: "Los conductores pueden solicitar la corrección de errores administrativos.",
-      importantLabel: "Nota Importante:",
+      petitionsBody: "Los conductores pueden solicitar correcciones de errores administrativos.",
+      importantLabel: "Fuente Oficial:",
       importantBody:
-        "A partir del 6 de enero de 2023, esta consulta reemplaza el Historial de Desempeño de Seguridad manual para conductores de la FMCSA (aunque otras modalidades del DOT, como la FAA, aún requieren verificaciones manuales).",
-      pdfButton: "Ver la Guía Completa de Consulta (PDF)",
+        "Confirme los tipos de consulta, reglas de consentimiento y cualquier cambio directamente en la orientacion del Clearinghouse de la FMCSA.",
+      pdfButton: "Abrir Orientacion Oficial del Clearinghouse",
     },
   },
 };
