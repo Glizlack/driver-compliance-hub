@@ -104,7 +104,7 @@ export const SEO = ({ title, description, path, noindex, jsonLd, image, lang = "
       window.location.hostname.startsWith("deploy-preview-") &&
       window.location.hostname.endsWith(".netlify.app");
     const pageMeta = resolvedLang === "es" ? SPANISH_META[basePath] : undefined;
-    const displayTitle = (pageMeta?.title ?? title).replace("DQ Checklist", "Driver Compliance Hub");
+    const displayTitle = pageMeta?.title ?? title;
     const displayDescription = pageMeta?.description ?? description;
     const prevTitle = document.title;
     document.title = displayTitle;
@@ -124,6 +124,7 @@ export const SEO = ({ title, description, path, noindex, jsonLd, image, lang = "
     upsertMeta('meta[property="og:type"]', { property: "og:type", content: "website" });
     upsertMeta('meta[property="og:site_name"]', { property: "og:site_name", content: "Driver Compliance Hub" });
     upsertMeta('meta[property="og:image"]', { property: "og:image", content: ogImage });
+    upsertMeta('meta[property="og:locale"]', { property: "og:locale", content: resolvedLang === "es" ? "es_ES" : "en_US" });
     upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
     upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: displayTitle });
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: displayDescription });
@@ -171,7 +172,7 @@ export const articleLd = ({ title, description, path, lang = "en" }: { title: st
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: (pageMeta?.title ?? title).replace("DQ Checklist", "Driver Compliance Hub"),
+    headline: pageMeta?.title ?? title,
     description: pageMeta?.description ?? description,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_ORIGIN}${translatedPath(path, resolvedLang)}` },
     author: { "@type": "Organization", name: "Driver Compliance Hub" },

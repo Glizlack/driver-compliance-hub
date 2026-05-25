@@ -58,7 +58,7 @@ const CHECKLIST: { en: string; es: string }[] = [
 ];
 
 const PATH = "/checklist/initial-mvr";
-const TITLE = "Initial Motor Vehicle Record (MVR) — 49 CFR §391.23 | DQ Checklist";
+const TITLE = "Initial Motor Vehicle Record (MVR) | 49 CFR 391.23 | Driver Compliance Hub";
 const DESC = "2026 guidelines for pulling and reviewing the mandatory initial state Motor Vehicle Record (MVR) for DOT-regulated drivers under 49 CFR §391.23.";
 
 const InitialMVR = () => {

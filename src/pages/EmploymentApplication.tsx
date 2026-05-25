@@ -50,7 +50,7 @@ const REQUIREMENTS = [
 ];
 
 const PATH = "/checklist/employment-application";
-const TITLE = "Driver's Employment Application — 49 CFR §391.21 | DQ Checklist";
+const TITLE = "Driver Employment Application | 49 CFR 391.21 | Driver Compliance Hub";
 const DESC = "2026 FMCSA Driver Employment Application requirements — 10 years of CMV history, 3 years of general employment, accidents, violations, and address history under 49 CFR §391.21.";
 
 const EmploymentApplication = () => {
