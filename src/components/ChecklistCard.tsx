@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { pick, type ChecklistItem } from "@/config/checklistData";
 import { TRANSLATIONS } from "@/config/i18n";
-import { useLang } from "@/contexts/LangContext";
+import { localizePath, useLang } from "@/contexts/LangContext";
 import {
   Dialog,
   DialogContent,
@@ -96,7 +96,7 @@ export const ChecklistCard = ({ item, index }: { item: ChecklistItem; index: num
             <ArrowUpRight className="ml-1 h-4 w-4" aria-hidden="true" />
           </a>
         ) : (
-          <Link to={item.href} className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground">
+          <Link to={localizePath(item.href, lang)} className="inline-flex items-center text-sm font-medium text-foreground/80 transition hover:text-foreground">
             {cta}
             <ArrowUpRight className="ml-1 h-4 w-4" aria-hidden="true" />
           </Link>
