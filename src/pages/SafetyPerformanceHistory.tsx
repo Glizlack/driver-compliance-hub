@@ -76,7 +76,7 @@ const RIGHTS: { en: string; es: string }[] = [
 ];
 
 const PATH = "/checklist/safety-performance-history";
-const TITLE = "Safety Performance History — 49 CFR §391.23 | DQ Checklist";
+const TITLE = "Safety Performance History | 49 CFR 391.23 | Driver Compliance Hub";
 const DESC = "Investigation requirements for DOT-regulated employers per 49 CFR §391.23 — process, key requirements, retention, and driver rights.";
 
 const SafetyPerformanceHistory = () => {

@@ -53,7 +53,7 @@ const TIPS = [
 ];
 
 const PATH = "/checklist/road-test";
-const TITLE = "Road Test & Certification — 49 CFR §391.31 | DQ Checklist";
+const TITLE = "Road Test and Certification | 49 CFR 391.31 | Driver Compliance Hub";
 const DESC = "Requirements under 49 CFR §391.31 for operating commercial motor vehicles — road test certificate, CDL substitution rules, and DQF retention.";
 
 const RoadTest = () => {

@@ -23,24 +23,33 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <LangProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/verify-examiner" element={<VerifyExaminer />} />
-          <Route path="/checklist/medical-certificate" element={<MedicalCertificate />} />
-          <Route path="/checklist/employment-application" element={<EmploymentApplication />} />
-          <Route path="/checklist/initial-mvr" element={<InitialMVR />} />
-          <Route path="/checklist/road-test" element={<RoadTest />} />
-          <Route path="/checklist/safety-performance-history" element={<SafetyPerformanceHistory />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <LangProvider>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/verify-examiner" element={<VerifyExaminer />} />
+            <Route path="/checklist/medical-certificate" element={<MedicalCertificate />} />
+            <Route path="/checklist/employment-application" element={<EmploymentApplication />} />
+            <Route path="/checklist/initial-mvr" element={<InitialMVR />} />
+            <Route path="/checklist/road-test" element={<RoadTest />} />
+            <Route path="/checklist/safety-performance-history" element={<SafetyPerformanceHistory />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/es/" element={<Index />} />
+            <Route path="/es/verify-examiner" element={<VerifyExaminer />} />
+            <Route path="/es/checklist/medical-certificate" element={<MedicalCertificate />} />
+            <Route path="/es/checklist/employment-application" element={<EmploymentApplication />} />
+            <Route path="/es/checklist/initial-mvr" element={<InitialMVR />} />
+            <Route path="/es/checklist/road-test" element={<RoadTest />} />
+            <Route path="/es/checklist/safety-performance-history" element={<SafetyPerformanceHistory />} />
+            <Route path="/es/privacy" element={<Privacy />} />
+            <Route path="/es/about" element={<About />} />
+            <Route path="/es/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </LangProvider>
       </BrowserRouter>
-      </LangProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

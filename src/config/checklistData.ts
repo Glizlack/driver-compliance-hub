@@ -26,6 +26,13 @@ export type ChecklistItem = {
   modalId?: "clearinghouse";
 };
 
+export type ChecklistSection = {
+  id: "new-hire" | "annual" | "updates";
+  label: Localized;
+  description: Localized;
+  itemIds: string[];
+};
+
 export const pick = (lang: Lang, v?: Localized): string => {
   if (!v) return "";
   if (lang === "es" && v.es) return v.es;
@@ -42,20 +49,20 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     },
     description: {
       en: "A signed foundation for the DQF. Requires 10 years of CMV history and 3 years of general employment history.",
-      es: "Base firmada del Archivo de Calificación del Conductor (DQF). Requiere 10 años de historial en vehículos comerciales (CMV) y 3 años de historial laboral general.",
+      es: "Base firmada del Archivo de Calificacion del Conductor (DQF). Requiere 10 anos de historial en vehiculos comerciales (CMV) y 3 anos de historial laboral general.",
     },
-    cta: { en: "Learn More", es: "Más información" },
+    cta: { en: "Learn More", es: "Mas informacion" },
     href: "/checklist/employment-application",
   },
   {
     id: "initial-mvr",
     number: "02",
-    title: { en: "Initial MVR", es: "Registro Inicial de Vehículos Motorizados (MVR)" },
+    title: { en: "Initial MVR", es: "Registro Inicial de Vehiculos Motorizados (MVR)" },
     description: {
-      en: "Motor Vehicle Record pulled from every state of residence in the last 3 years before the driver is placed in service.",
-      es: "Registro del Departamento de Vehículos Motorizados solicitado en cada estado de residencia durante los últimos 3 años, antes de que el conductor entre en servicio.",
+      en: "Motor Vehicle Record requested from each licensing state for the prior 3 years and retained in the qualification file under the required timeline.",
+      es: "Registro de vehiculos motorizados solicitado a cada estado de licencia por los 3 anos anteriores y conservado en el expediente dentro del plazo requerido.",
     },
-    cta: { en: "Learn More", es: "Más información" },
+    cta: { en: "Learn More", es: "Mas informacion" },
     href: "/checklist/initial-mvr",
   },
   {
@@ -64,9 +71,9 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     title: { en: "Road Test Certificate", es: "Certificado de Examen de Manejo" },
     description: {
       en: "Documented road test and certificate on file. A valid CDL copy is acceptable in lieu of a road test.",
-      es: "Examen de manejo documentado con certificado en el expediente. Una copia válida de la CDL es aceptable en lugar del examen.",
+      es: "Examen de manejo documentado con certificado en el expediente. Una copia valida de la CDL es aceptable en lugar del examen.",
     },
-    cta: { en: "Learn More", es: "Más información" },
+    cta: { en: "Learn More", es: "Mas informacion" },
     href: "/checklist/road-test",
   },
   {
@@ -74,13 +81,13 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     number: "04",
     title: {
       en: "Medical Examiner's Certificate",
-      es: "Certificado del Examinador Médico",
+      es: "Certificado del Examinador Medico",
     },
     description: {
-      en: "Mandatory verification of physical fitness by an FMCSA-certified professional. CDL data is now transmitted electronically as of June 2025.",
-      es: "Verificación obligatoria de la aptitud física por un profesional certificado por la FMCSA. Desde junio de 2025, los datos de la CDL se transmiten electrónicamente.",
+      en: "Mandatory verification of physical fitness by an FMCSA-certified professional. CDL data is electronically transmitted during the NRII transition; see the current exemption update.",
+      es: "Verificacion obligatoria de aptitud fisica por un profesional certificado por la FMCSA. Los datos CDL se transmiten electronicamente durante la transicion NRII; consulte la actualizacion vigente.",
     },
-    cta: { en: "Learn More", es: "Más información" },
+    cta: { en: "Learn More", es: "Mas informacion" },
     href: "/checklist/medical-certificate",
   },
   {
@@ -88,13 +95,13 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
     number: "05",
     title: {
       en: "Safety Performance History",
-      es: "Historial de Desempeño de Seguridad",
+      es: "Historial de Desempeno de Seguridad",
     },
     description: {
-      en: "Mandatory 3-year investigation of driver safety and drug/alcohol history from all previous DOT-regulated employers. Must be completed within 30 days of hire.",
-      es: "Investigación obligatoria de 3 años sobre el historial de seguridad y de drogas/alcohol del conductor con todos los empleadores anteriores regulados por el DOT. Debe completarse dentro de los 30 días posteriores a la contratación.",
+      en: "Required 3-year investigation of safety performance information from previous DOT-regulated employers, completed within 30 days of employment beginning.",
+      es: "Investigacion requerida de 3 anos sobre informacion de seguridad de empleadores anteriores regulados por DOT, completada dentro de 30 dias del inicio del empleo.",
     },
-    cta: { en: "Learn More", es: "Más información" },
+    cta: { en: "Learn More", es: "Mas informacion" },
     href: "/checklist/safety-performance-history",
   },
   {
@@ -105,17 +112,87 @@ export const CHECKLIST_ITEMS: ChecklistItem[] = [
       es: "Consulta al Clearinghouse de Drogas y Alcohol",
     },
     description: {
-      en: "Full pre-employment query of the FMCSA Clearinghouse is mandatory before the driver performs safety-sensitive functions.",
-      es: "Es obligatorio realizar una consulta completa previa al empleo en el Clearinghouse de la FMCSA antes de que el conductor realice funciones sensibles a la seguridad.",
+      en: "For CDL/CLP drivers, a full pre-employment FMCSA Clearinghouse query is required before safety-sensitive functions.",
+      es: "Para conductores con CDL/CLP, se requiere una consulta completa previa al empleo en el Clearinghouse de la FMCSA antes de funciones sensibles a la seguridad.",
     },
-    cta: { en: "Learn More", es: "Más información" },
+    cta: { en: "Learn More", es: "Mas informacion" },
     href: "#",
     modalId: "clearinghouse",
+  },
+  {
+    id: "annual-mvr",
+    number: "A1",
+    title: { en: "Annual MVR Review", es: "Revision Anual del MVR" },
+    description: {
+      en: "At least once every 12 months, obtain and review the driver's current motor vehicle record and retain a dated review note.",
+      es: "Al menos una vez cada 12 meses, obtenga y revise el registro actual del conductor y conserve una nota fechada de la revision.",
+    },
+    cta: { en: "Official Guidance", es: "Guia Oficial" },
+    href: "https://www.fmcsa.dot.gov/registration/commercial-drivers-license/what-extent-must-motor-carrier-review-drivers-overall-0",
+  },
+  {
+    id: "annual-clearinghouse",
+    number: "A2",
+    title: { en: "Annual Clearinghouse Query", es: "Consulta Anual al Clearinghouse" },
+    description: {
+      en: "Employers of CDL drivers must conduct a Clearinghouse query at least annually, with the required driver consent.",
+      es: "Los empleadores de conductores con CDL deben realizar una consulta al Clearinghouse al menos anualmente, con el consentimiento requerido.",
+    },
+    cta: { en: "Official Guidance", es: "Guia Oficial" },
+    href: "https://clearinghouse.fmcsa.dot.gov/FAQ/Topics/Employers%2Cqueries-and-consent-requests",
+  },
+  {
+    id: "medical-transition",
+    number: "U1",
+    title: { en: "Medical Certificate Transition", es: "Transicion del Certificado Medico" },
+    description: {
+      en: "FMCSA's temporary exemption allows certain interstate CDL/CLP drivers and carriers to rely on a paper MEC for up to 60 days after issuance through October 11, 2026.",
+      es: "La exencion temporal de la FMCSA permite a ciertos conductores interestatales con CDL/CLP y transportistas usar un MEC en papel hasta 60 dias despues de su emision, hasta el 11 de octubre de 2026.",
+    },
+    cta: { en: "Read FMCSA Notice", es: "Leer Aviso FMCSA" },
+    href: "https://www.fmcsa.dot.gov/newsroom/fmcsa-issues-temporary-exemption-support-nrii-transition",
   },
 ];
 
 export const SITE = {
-  metaTitle: "Federal Driver Qualification Checklist | 2026 DOT Compliance Guide",
+  metaTitle: "Driver Compliance Hub | Practical FMCSA Guidance for Small Fleets",
   metaDescription:
-    "The 2026 6-point DOT Driver Qualification File checklist for commercial drivers and fleets across the United States — MVR, Clearinghouse, Medical Card, Safety History and more.",
+    "Free, practical FMCSA guidance for owner-operators and small fleets, including new-hire files, annual reviews, medical updates, and printable checklists.",
 };
+
+export const CHECKLIST_SECTIONS: ChecklistSection[] = [
+  {
+    id: "new-hire",
+    label: { en: "New Hire", es: "Nueva Contratacion" },
+    description: {
+      en: "Initial hiring checks and follow-up inquiries used to assemble a driver qualification file.",
+      es: "Verificaciones iniciales y consultas de seguimiento para reunir un expediente de calificacion del conductor.",
+    },
+    itemIds: [
+      "employment-application",
+      "initial-mvr",
+      "road-test",
+      "medical-certificate",
+      "safety-performance",
+      "clearinghouse",
+    ],
+  },
+  {
+    id: "annual",
+    label: { en: "Annual Review", es: "Revision Anual" },
+    description: {
+      en: "Recurring checks that help keep an active driver's compliance record current.",
+      es: "Verificaciones recurrentes para mantener actualizado el expediente de un conductor activo.",
+    },
+    itemIds: ["annual-mvr", "annual-clearinghouse"],
+  },
+  {
+    id: "updates",
+    label: { en: "Medical & Clearinghouse Updates", es: "Actualizaciones Medicas y Clearinghouse" },
+    description: {
+      en: "Current FMCSA updates and official resources to confirm changing requirements.",
+      es: "Actualizaciones actuales de la FMCSA y recursos oficiales para confirmar requisitos cambiantes.",
+    },
+    itemIds: ["medical-transition", "medical-certificate", "clearinghouse"],
+  },
+];
