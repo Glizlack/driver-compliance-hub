@@ -16,17 +16,23 @@ type DriverStage = "new-hire" | "current";
 const OFFICIAL_SOURCES = [
   {
     title: "Driver Qualification File Checklist",
+    titleEs: "Lista del Expediente de Calificacion del Conductor",
     label: "FMCSA Safety Planner",
+    labelEs: "Planificador de Seguridad FMCSA",
     href: "https://csa.fmcsa.dot.gov/SafetyPlanner/GetFile.aspx?d=44",
   },
   {
     title: "Clearinghouse Queries & Consent",
+    titleEs: "Consultas y Consentimiento del Clearinghouse",
     label: "FMCSA Clearinghouse",
+    labelEs: "Clearinghouse FMCSA",
     href: "https://clearinghouse.fmcsa.dot.gov/FAQ/Topics/Employers%2Cqueries-and-consent-requests",
   },
   {
     title: "Medical Certificate Transition Exemption",
+    titleEs: "Exencion de Transicion del Certificado Medico",
     label: "FMCSA Notice - April 10, 2026",
+    labelEs: "Aviso FMCSA - 10 de abril de 2026",
     href: "https://www.fmcsa.dot.gov/newsroom/fmcsa-issues-temporary-exemption-support-nrii-transition",
   },
 ];
@@ -69,8 +75,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title={SITE.metaTitle}
-        description={SITE.metaDescription}
+        title={tr(lang, SITE.metaTitle, "Driver Compliance Hub | Orientacion practica de la FMCSA para pequenas flotas")}
+        description={tr(lang, SITE.metaDescription, "Orientacion practica gratuita de la FMCSA para operadores propietarios y pequenas flotas, con revisiones anuales, actualizaciones medicas y listas imprimibles.")}
         path="/"
         jsonLd={breadcrumbLd([{ name: "Home", path: "/" }])}
       />
@@ -91,10 +97,10 @@ const Index = () => {
             Driver<span className="text-amber-300"> Compliance</span> Hub
           </div>
           <div className="hidden items-center gap-6 text-sm text-foreground/70 md:flex">
-            <a href="#checklist" className="transition hover:text-foreground">Compliance</a>
-            <a href="#builder" className="transition hover:text-foreground">Build Yours</a>
-            <a href="#sources" className="transition hover:text-foreground">Sources</a>
-            <Link to="/contact" className="transition hover:text-foreground">Contact</Link>
+            <a href="#checklist" className="transition hover:text-foreground">{tr(lang, "Compliance", "Cumplimiento")}</a>
+            <a href="#builder" className="transition hover:text-foreground">{tr(lang, "Checklist Generator", "Generador de Listas")}</a>
+            <a href="#sources" className="transition hover:text-foreground">{tr(lang, "Sources", "Fuentes")}</a>
+            <Link to="/contact" className="transition hover:text-foreground">{tr(lang, "Contact", "Contacto")}</Link>
           </div>
           <LanguageSwitcher value={lang} onChange={setLang} />
         </nav>
@@ -264,8 +270,8 @@ const Index = () => {
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {OFFICIAL_SOURCES.map((source) => (
               <a key={source.href} href={source.href} target="_blank" rel="noopener noreferrer" className="glass-card rounded-2xl p-6">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-foreground/45">{source.label}</p>
-                <h3 className="font-display mt-4 text-xl font-semibold">{source.title}</h3>
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-foreground/45">{tr(lang, source.label, source.labelEs)}</p>
+                <h3 className="font-display mt-4 text-xl font-semibold">{tr(lang, source.title, source.titleEs)}</h3>
                 <span className="mt-6 inline-flex items-center text-sm text-foreground/75">
                   {tr(lang, "Open official source", "Abrir fuente oficial")}
                   <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
