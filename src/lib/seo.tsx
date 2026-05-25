@@ -41,8 +41,9 @@ export const SEO = ({ title, description, path, noindex, jsonLd, image }: SEOPro
     const pathname = path ?? (typeof window !== "undefined" ? window.location.pathname : "/");
     const url = `${origin}${pathname}`;
     const ogImage = image ?? `${origin}/og-image.jpg`;
+    const displayTitle = title.replace("DQ Checklist", "Driver Compliance Hub");
     const prevTitle = document.title;
-    document.title = title;
+    document.title = displayTitle;
 
     upsertMeta('meta[name="description"]', { name: "description", content: description });
     upsertMeta('meta[name="robots"]', {
@@ -50,14 +51,14 @@ export const SEO = ({ title, description, path, noindex, jsonLd, image }: SEOPro
       content: noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large",
     });
     upsertLink("canonical", url);
-    upsertMeta('meta[property="og:title"]', { property: "og:title", content: title });
+    upsertMeta('meta[property="og:title"]', { property: "og:title", content: displayTitle });
     upsertMeta('meta[property="og:description"]', { property: "og:description", content: description });
     upsertMeta('meta[property="og:url"]', { property: "og:url", content: url });
     upsertMeta('meta[property="og:type"]', { property: "og:type", content: "website" });
     upsertMeta('meta[property="og:site_name"]', { property: "og:site_name", content: "Driver Compliance Hub" });
     upsertMeta('meta[property="og:image"]', { property: "og:image", content: ogImage });
     upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
-    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: title });
+    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: displayTitle });
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: description });
     upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: ogImage });
 
@@ -102,7 +103,7 @@ export const articleLd = ({ title, description, path }: { title: string; descrip
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: title,
+    headline: title.replace("DQ Checklist", "Driver Compliance Hub"),
     description,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${origin}${path}` },
     author: { "@type": "Organization", name: "Driver Compliance Hub" },
