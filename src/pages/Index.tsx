@@ -91,7 +91,7 @@ const Index = () => {
             Driver<span className="text-amber-300"> Compliance</span> Hub
           </div>
           <div className="hidden items-center gap-6 text-sm text-foreground/70 md:flex">
-            <a href="#checklist" className="transition hover:text-foreground">Checklist</a>
+            <a href="#checklist" className="transition hover:text-foreground">Compliance</a>
             <a href="#builder" className="transition hover:text-foreground">Build Yours</a>
             <a href="#sources" className="transition hover:text-foreground">Sources</a>
             <Link to="/contact" className="transition hover:text-foreground">Contact</Link>
