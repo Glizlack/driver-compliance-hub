@@ -11,6 +11,8 @@ type SEOProps = {
   image?: string;
 };
 
+const SITE_ORIGIN = "https://fmcsahelper.com";
+
 const upsertMeta = (selector: string, attrs: Record<string, string>) => {
   let el = document.head.querySelector(selector) as HTMLMetaElement | null;
   if (!el) {
@@ -37,10 +39,13 @@ const upsertLink = (rel: string, href: string) => {
 
 export const SEO = ({ title, description, path, noindex, jsonLd, image }: SEOProps) => {
   useEffect(() => {
-    const origin = typeof window !== "undefined" ? window.location.origin : "";
     const pathname = path ?? (typeof window !== "undefined" ? window.location.pathname : "/");
-    const url = `${origin}${pathname}`;
-    const ogImage = image ?? `${origin}/og-image.jpg`;
+    const url = `${SITE_ORIGIN}${pathname}`;
+    const ogImage = image ?? `${SITE_ORIGIN}/og-image.jpg`;
+    const isDeployPreview =
+      typeof window !== "undefined" &&
+      window.location.hostname.startsWith("deploy-preview-") &&
+      window.location.hostname.endsWith(".netlify.app");
     const displayTitle = title.replace("DQ Checklist", "Driver Compliance Hub");
     const prevTitle = document.title;
     document.title = displayTitle;
@@ -48,7 +53,7 @@ export const SEO = ({ title, description, path, noindex, jsonLd, image }: SEOPro
     upsertMeta('meta[name="description"]', { name: "description", content: description });
     upsertMeta('meta[name="robots"]', {
       name: "robots",
-      content: noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large",
+      content: noindex || isDeployPreview ? "noindex, nofollow" : "index, follow, max-image-preview:large",
     });
     upsertLink("canonical", url);
     upsertMeta('meta[property="og:title"]', { property: "og:title", content: displayTitle });
@@ -85,7 +90,6 @@ export const SEO = ({ title, description, path, noindex, jsonLd, image }: SEOPro
 };
 
 export const breadcrumbLd = (items: { name: string; path: string }[]): Record<string, unknown> => {
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -93,19 +97,18 @@ export const breadcrumbLd = (items: { name: string; path: string }[]): Record<st
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${origin}${item.path}`,
+      item: `${SITE_ORIGIN}${item.path}`,
     })),
   };
 };
 
 export const articleLd = ({ title, description, path }: { title: string; description: string; path: string }): Record<string, unknown> => {
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title.replace("DQ Checklist", "Driver Compliance Hub"),
     description,
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${origin}${path}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_ORIGIN}${path}` },
     author: { "@type": "Organization", name: "Driver Compliance Hub" },
     publisher: { "@type": "Organization", name: "Driver Compliance Hub" },
     inLanguage: "en-US",
